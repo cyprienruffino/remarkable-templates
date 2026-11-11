@@ -1,0 +1,68 @@
+{
+    "name": "Chord grid",
+    "author": "Cyprien Ruffino",
+    "templateVersion": "1.0.0",
+    "formatVersion": 1,
+    "categories": ["Creative"],
+    "orientation": "landscape",
+    "constants": [
+        {"columns": 8},
+        {"rows": 4},
+        {"cell": "templateWidth / columns"},
+        {"gridHeight": "rows * cell"},
+        {"gridTop": "templateHeight - gridHeight"}
+    ],
+    "items": [
+        {
+            "id": "vlines",
+            "type": "group",
+            "boundingBox": {
+                "x": 0,
+                "y": "gridTop",
+                "width": "cell",
+                "height": "gridHeight"
+            },
+            "repeat": {
+                "columns": "columns"
+            },
+            "children": [
+                {
+                    "id": "vline",
+                    "type": "path",
+                    "strokeWidth": 2,
+                    "data": ["M", 0, 0, "L", 0, "parentHeight"]
+                }
+            ]
+        },
+        {
+            "id": "hlines",
+            "type": "group",
+            "boundingBox": {
+                "x": 0,
+                "y": "gridTop",
+                "width": "templateWidth",
+                "height": "cell"
+            },
+            "repeat": {
+                "rows": "rows"
+            },
+            "children": [
+                {
+                    "id": "hline",
+                    "type": "path",
+                    "strokeWidth": 2,
+                    "data": ["M", 0, 0, "L", "parentWidth", 0]
+                }
+            ]
+        },
+        {
+            "id": "edges",
+            "type": "path",
+            "strokeWidth": 2,
+            "data": [
+                "M", "templateWidth - 1", "gridTop", "L", "templateWidth - 1", "templateHeight",
+                "M", 0, "templateHeight - 1", "L", "templateWidth", "templateHeight - 1"
+            ]
+        }
+    ]
+}
