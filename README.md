@@ -2,7 +2,7 @@
 
 Custom notebook templates for the reMarkable Paper Pro Move (OS 3.29), installed with [xovi](https://github.com/asivery/xovi).
 
-## Chord grid
+## Example: Chord grid
 
 Landscape. A full-width grid of 8 × 4 squares, for chord grids, with a strip at the top for the title and notes.
 
